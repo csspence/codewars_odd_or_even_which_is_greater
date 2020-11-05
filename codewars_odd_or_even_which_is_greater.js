@@ -8,6 +8,21 @@ If the sum of odd numbers is greater than the sum of even numbers return: "Odd i
 If the total of both even and odd numbers are identical return: "Even and Odd are the same"
 */
 
-function evenOrOdd(str) {
-
+const evenOrOdd = (str) => {
+  let odds = 0;
+  let evens = 0;
+  for(let i = 0; i < str.length; i++) {
+    if(Number(str[i]) % 2 === 0) {
+      evens += Number(str[i]);
+    } else {
+      odds += Number(str[i]);
+    }
+  }
+  if(evens > odds) {
+    return 'Even is greater than Odd';
+  } else if (odds > evens) {
+    return 'Odd is greater than Even';
+  } else {
+    return 'Even and Odd are the same';
+  }
 }
